@@ -1,0 +1,44 @@
+1) Read Json file (labtask5_file)using R data frame
+2) Find average salary, standard deviation, median for all employees
+3) Project 2 year salary for each employee where salary increases 10% on an average every year
+4) Express earnings as a percentage of salary for each employee
+5) Plot a linear line of Earnings vs Salary
+6) Perform a linear regression of Earnings vs Salary.
+7) Predict earnings for each of employee salary
+8) Record difference in predicted earnings vs actual earnings
+9) Is linear a good fit for this problem? Explain 
+
+
+
+Sample code
+setwd("C:/..............") 
+library("rjson") 
+input <- fromJSON(file = "labtask4_file.json") 
+df = as.data.frame(input) 
+
+df$ID <- as.numeric(sapply(strsplit(as.character(df$ID), ","), function(x) x[1])) 
+df$Salary <- as.numeric(sapply(strsplit(as.character(df$Salary), ","), function(x) x[1])) 
+df$Earnings <- as.numeric(sapply(strsplit(as.character(df$Earnings), ","), function(x) x[1])) 
+
+#average salary 
+mean(df$Salary, na.rm = TRUE) 
+
+#standard deviation 
+sd(df$Salary, na.rm = TRUE) 
+
+#Median 
+median(df$Salary, na.rm = TRUE) 
+
+#Earnings As A Percentage Of Salary For Each Employee 
+
+for (x in 1:25){ 
+  print(paste("Earning As Percentage Of Salary For Employee",x, " = ",(df$Earnings[x] / df$Salary[x]) * 100,"%")) 
+} 
+
+#Linear Line Of Earnings Vs Salary 
+x = df$Salary 
+y = df$Earnings 
+
+plot(x,y, col="blue", xlab="Salary", ylab="Earnings", main="Earnings vs Salary Regression") 
+
+abline(lm(y~x), col="Red") 
