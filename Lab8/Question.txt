@@ -1,0 +1,17 @@
+1. Quick view the Iris data
+library(datasets)
+head(iris, n=100)
+
+2. Check structure of iris
+str(iris)   
+
+3. Determine the relation between Sepal.Length and Sepal.Width using a scatter plot
+
+4. Determine the relation between Petal.Length and Petal.Width using a scatter plot
+
+5. Perform multi regression analysis by setting Sepal.Length as target variable and Sepal.Width,Petal.Length,Petal.Width as dependent variables
+Eg. model <- lm(SL ~ SW + PL + ...............) 
+
+6. Obtain the linear multi variate equation. Find the error in preduction by comparing actual Sepal Length against predicted Sepal Length using the obtained equation.
+
+Write your detailed observation along with plots for each steps from 3 - 6
