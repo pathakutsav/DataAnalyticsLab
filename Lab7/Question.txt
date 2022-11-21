@@ -1,0 +1,29 @@
+ggplot2 is a plotting package that provides helpful commands to create complex plots from data in a data frame. It provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties.
+See https://r-graph-gallery.com/ggplot2-package.html
+
+1) Load the iris dataset
+
+2) #install packages
+library(ggplot2); 
+library(GGally)
+
+3) Create GG pairs for the whole iris data set 
+ggpairs(iris) 
+
+4) Create GG Pairs For Only First 4 Columns 
+ggpairs(iris,columns = .....) # Columns
+
+5) Create subset of 2 species by taking first 100 rows. From this 100 randomly take 80 rows as training set and take 20 rows as test set
+
+eg...ir_data<-ir_data[1:......,]
+set.seed(100)
+samp<-sample(1:100,......)
+......................
+
+6) Do ggpairs() for both test and training
+
+Questions
+1) Explain ggpairs() function. How does it help in data visualization. Use your results to explain
+2) Explain the output of step 3. Interpret the results
+3) How is step 4 different from step 3
+4) Compare test and training ggpairs() results and make inferences on similarity.
