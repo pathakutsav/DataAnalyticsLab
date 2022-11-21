@@ -1,0 +1,16 @@
+For the given spreadsheet, perform following operations
+1) Read both files "samplefile..........." into a dataframe
+2) Add a column to compute net revenue price where revenue = ((production in tonnes) * unit cost) + 0.1 * ((production in tonnes) * unit cost)) for Sugar
+3) Add a column to compute net revenue price where revenue = ((production in tonnes) * unit cost) + 0.085 * ((production in tonnes) * unit cost)) for Maize
+
+3) Plot a histogram of production in tonnes both for Sugar and Maize
+4) Find average, median of sugar & Maize production in tonnes
+5) Find average, median of revenue both for Sugar and Maize
+
+6) Perform a linear correlation of the revenues of Sugar and Maize. Make inferences on the obtained value? Is linear correlation valid? 
+Sample code.............result = cor(x, y, method = "pearson")
+
+6) Perform a linear regression in one variable of  revenue vs maize production in tonnes
+7) Perform a linear regression in one variable of  revenue vs sugar production in tonnes
+..........use lm(Y~x)
+8) Obtain intercept and slope for both the lines and plot t against x for both cases 7 and 8. Is linear regression suitable here?
