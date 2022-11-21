@@ -1,0 +1,29 @@
+Write to do following
+1) R program to read 'testfile.csv'
+2) Store values in array
+3) Provide linePlot B against A
+4) Compute D = (col B + col C)/(col A)
+5) Provide linePlot D against A
+6) Compute E = average of A, B, C, D
+7) Provide list of rows where Value of E > median (E)
+8) Sort array in ascending order of E
+
+Commands to use
+_____________________________________________________
+setwd("C:/...................................")
+ 
+df = read.csv("filename.csv") \\read file
+lst1 = list() 
+for(i in 1:ncol(df)) {     
+  lst1[[i]] <- df[ , i]   
+}
+ 
+
+arr = array(unlist(listname), dim = c(dim1,dim2)) #convert into array with required dimensions
+print(arr)
+
+plot (arr[,1],arr[,2]) #command to plot
+_________________________
+Part  2--- Write newly added column to a csv file (should contact column A, B, C, D, E )
+Part 3 ---- create a new file with the subset of rows from step 7 and 8
+use write.csv(data, path)
