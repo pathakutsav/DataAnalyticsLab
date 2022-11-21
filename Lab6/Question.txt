@@ -1,0 +1,40 @@
+In this session we will do some exploratory data analysis on the famous Iris dataset. The Iris Dataset contains four features (length and width of sepals and petals) of 50 samples of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). These measures were used to create a linear discriminant model to classify the species. The dataset is often used in data mining, classification and clustering examples and to test algorithms.
+
+See http://archive.ics.uci.edu/ml/datasets/Iris for more information on Iris Dataset
+
+Commands
+1) library(datasets)
+str(iris)
+
+2) Get first 10 rows of each subset
+subset(iris, Species == "setosa")[1:10,]
+subset(iris, Species == "versicolor")[1:10,]
+subset(iris, Species == "virginica")[1:10,]
+
+3) summary(iris)
+
+4) Perform correlation among variables
+corr <- cor(iris[,1:4])
+round(corr,3)
+
+Classification with Decision Trees
+
+Create a model that predicts the species from the petal and sepal width and length. One model that is easy to create and understand is a decision tree, which can be created with the C5.0 package.
+
+5) library(C50) #install library if not present
+input <- iris[,1:4]
+output <- iris[,5]
+model1 <- C5.0(input, output, control = C5.0Control(noGlobalPruning = TRUE,minCases=1))
+plot(model1, main="C5.0 Decision Tree - Unpruned, min=1")
+
+6) Change tree parameters
+model2 <- C5.0(input, output, control = C5.0Control(noGlobalPruning = FALSE))
+plot(model2, main="C5.0 Decision Tree - Pruned")
+
+Questions
+1) What does step 3 provide? 
+2) What is statistical correlation? What can you infer from the results in step 4
+3) What is a Decision Tree? How can Decision be used in this dataset? Explain types of decision trees?
+4) What can you infer from the outcome of step 5
+5) Compare the tree model obtained in step 6 against step 5
+6) What can you do the model you have created?
