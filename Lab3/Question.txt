@@ -1,0 +1,44 @@
+A) Use Readfile And Dataframe To Store Contents In R Data Structure
+#Use A Readfile and Dataframe To Store Contents
+setwd("C:/.............") 
+df = read.csv("testfile.csv") 
+
+B) Compute The Total Subject Marks For Each Students (Subject 1 + 2+ 3 + 4+ 5)
+#The Total Subject Marks For Each Students
+
+Hint: 
+df$total_marks = rowSums(df[ , c(a:b)],.....)   , set a and b 
+
+C) Find The Median and Average Of Subject 1, Subject 2, Subject 3, Subject 4, Subject 5 for each students
+
+Use Mean function
+
+D) Find The Average Of The Total Marks 
+
+E) Plot A Line Plot Of Average Marks For Each Student
+plot(x, df$Subject_Average, type = "b", xlab = "Student", ylab = "Score", pch = 19, col = "Red", lwd= 2.0)
+legend("topleft", legend=c("Subject Average Per Student"), fill = c("Red"))
+
+F) Add Median Of Subject Score For Each Student To The Line Plot.
+#Add Median Of Subject Score For Each Student To The Line Plot
+df$StudentScore_Median = apply(df[,3:7],1, median, na.rm = TRUE)
+lines(x, df$StudentScore_Median, type = "b", pch = 21, col = "Blue", lwd = 2.0)
+
+G) Find List Of Students Who Have Scored More Than 90 In Total Marks
+#List Of Students Who Have Scored More Than 90 in Average
+df[which(df$Subject_Average > 90), ]
+
+H) Find List Of Students With DOB Greater Than 1-07-1990 And Status 'Active'
+#List Of Students With DOB Greater Than 1-07-1990 and Status 'Active'
+TempDf = subset(df, df$Date.of.Birth > ".....................)
+
+I) Find Interquartile Deviation For Total Marks Column (Use Quartile Function)
+#Interquartile Deviation For Total Marks Column
+print(summary(df$total_marks))
+print(paste("Interquartile Deviation of Total Marks=", IQR(df$................)))
+
+J) Compare the performance of semester 3 students vs Semester 5 students? Who has done well? Explain the metrics who have used to make the inference.
+
+K) Put The Data Frame With Additional Column Back To Excel And Save.
+#Put The Data Frame With Additional Column Back To Excel and Save
+write.csv(df,"B:/WAREHOUSE/IMP/7th SEM/BDAL/Pgm2/output.csv", row.names = FALSE)
